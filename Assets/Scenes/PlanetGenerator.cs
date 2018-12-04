@@ -23,7 +23,7 @@ public class PlanetGenerator : MonoBehaviour {
 			float distance = size / 2 + Mathf.PerlinNoise(angle * frequency * scale, seed) * amplitude * scale;
 			distance = Mathf.Round(distance);
 
-			for (int i = 0; i < (distance - size / 2) + 1; i++) {
+			for (int i = 0; i < distance - (size / 2) + 1; i++) {
 				placeSurfaceBlock(distance - i, angle);
 			}
 		}
