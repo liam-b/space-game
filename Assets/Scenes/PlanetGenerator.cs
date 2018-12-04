@@ -33,8 +33,8 @@ public class PlanetGenerator : MonoBehaviour {
 		float x = Mathf.Cos(angle) * distance;
 		float y = Mathf.Sin(angle) * distance;
 
-		Instantiate(surfaceBlock, new Vector2(x, y), Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg), transform)
-			.GetComponent<Renderer>().material.color = new Color(0.65f, 0.43f, 0.46f, 1);
+		Instantiate(surfaceBlock, new Vector2(x, y), Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg), transform);
+			// .GetComponent<Renderer>().material.color = new Color(0.65f, 0.43f, 0.46f, 1);
 	}
 	
 	void Update () {
