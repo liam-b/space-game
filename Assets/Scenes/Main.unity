@@ -155,9 +155,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   surfaceBlock: {fileID: 1847952042109104, guid: deb6ed0dba543490d8acb53ac2fdf2db,
     type: 2}
-  size: 500
-  amplitude: 4
-  frequency: 1
+  size: 1000
+  amplitude: 2.7
+  frequency: 0.6
   seed: 0
 --- !u!1 &257368749
 GameObject:
@@ -184,8 +184,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 257368749}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 500, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalPosition: {x: 0, y: 620, z: 0}
+  m_LocalScale: {x: 15, y: 15, z: 1}
   m_Children:
   - {fileID: 2122116764}
   - {fileID: 471911437}
@@ -213,7 +213,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.3
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -284,6 +284,7 @@ MonoBehaviour:
   rotateRight: 100
   enginePower: 1000
   rotationPower: 1000
+  planet: {fileID: 1611681882}
 --- !u!1 &382333098
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,6 +526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followObject: {fileID: 257368749}
   camera: {fileID: 534669904}
+  maxZoom: 250
 --- !u!1 &721024532
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,7 +701,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1127397093}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.65, z: 0}
+  m_LocalPosition: {x: 0, y: -0.644, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 257368750}
@@ -1416,7 +1418,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.4
+      value: 0.7
       mode: 0
       spread: 0
       speed:
@@ -1535,7 +1537,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 150
+      scalar: 200
       minScalar: 10
       maxCurve:
         serializedVersion: 2

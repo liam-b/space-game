@@ -11,12 +11,12 @@ public class PlanetGenerator : MonoBehaviour {
 	public int seed;
 
 	void Start () {
-		int steps = (int)size * 4;
+		int steps = (int)(size * 3.5);
 		float scale = (size / 100f);
 
 		Transform planetTransform = transform.parent.Find("Body");
 		planetTransform.transform.localScale = new Vector2(size, size);
-		planetTransform.gameObject.GetComponent<Renderer>().material.color = new Color(0.65f, 0.43f, 0.46f, 1);
+		// planetTransform.gameObject.GetComponent<Renderer>().material.color = new Color(0.65f, 0.43f, 0.46f, 1);
 
 		for (int step = 0; step < steps; step++) {
 			float angle = ((float)step / (float)steps) * 2 * Mathf.PI;
