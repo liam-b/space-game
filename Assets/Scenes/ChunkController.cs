@@ -40,7 +40,7 @@ public class ChunkController : MonoBehaviour {
 		float scale = 20;
 		for (int step = startStep; step < endStep; step++) {
 			float angle = ((float)step / (float)totalSteps) * 2 * Mathf.PI;
-			float distance = features.size / 2 + Mathf.PerlinNoise(angle * features.frequency * scale, features.seed) * features.amplitude * scale;
+			float distance = proceduralDistance(features, angle, scale);
 
 			placeSurfaceBlock(Mathf.Round(distance), distance - (features.size / 2) + 2, angle);
 		}
@@ -48,20 +48,18 @@ public class ChunkController : MonoBehaviour {
 
 	void unloadSurface() {
 		loaded = false;
-		foreach (Transform child in transform) child.gameObject.SetActive(false);
+		foreach (Transform child in transform) ObjectPooler.SharedInstance.ReleaseObject(child.gameObject);
 	}
 
-	void placeSurfaceBlock(float distance, float length, float angle) {
-		float x = Mathf.Cos(angle) * (distance - length / 2);
-		float y = Mathf.Sin(angle) * (distance - length / 2);
+	void placeSurfaceBlock(float distance, float height, float angle) {
+		float x = Mathf.Cos(angle) * (distance - height / 2);
+		float y = Mathf.Sin(angle) * (distance - height / 2);
 
-		GameObject block = ObjectPooler.SharedInstance.GetPooledObject();
-		if (block != null) {
-			block.transform.position = new Vector2(x, y);
-			block.transform.localScale = new Vector2(length, 1);
-			block.transform.rotation = Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg);
-			block.transform.parent = transform;
-			block.SetActive(true);
-		}
+		GameObject block = ObjectPooler.SharedInstance.DrawObject(new Vector2(x, y), Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg), transform);
+		block.transform.localScale = new Vector2(height, 1);
+	}
+
+	float proceduralDistance(PlanetFeatures features, float angle, float scale) {
+		return features.size / 2 + (Mathf.PerlinNoise(angle * features.frequency * scale * (1 - Mathf.PerlinNoise(angle * features.frequency * 0.01f, features.seed + 100) / 2), features.seed) * features.amplitude * scale);
 	}
 }

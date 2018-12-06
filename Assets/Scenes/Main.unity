@@ -5680,9 +5680,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledObjects: []
-  objectToPool: {fileID: 1847952042109104, guid: deb6ed0dba543490d8acb53ac2fdf2db,
-    type: 2}
-  amountToPool: 7000
+  poolObject: {fileID: 1847952042109104, guid: deb6ed0dba543490d8acb53ac2fdf2db, type: 2}
+  amount: 5000
 --- !u!1 &1967325068
 GameObject:
   m_ObjectHideFlags: 0
