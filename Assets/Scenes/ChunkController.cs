@@ -29,8 +29,8 @@ public class ChunkController : MonoBehaviour {
 	
 	void Update() {
 		float distance = (player.transform.position - transform.position).sqrMagnitude;
-		if (distance <= loadDistance && !loaded) loadSurface();
-		if (distance >= loadDistance + 100 && loaded) unloadSurface();
+		if (distance <= loadDistance * loadDistance && !loaded) loadSurface();
+		if (distance >= loadDistance * loadDistance + 100 && loaded) unloadSurface();
   }
 
 	void loadSurface() {

@@ -5632,8 +5632,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6937ceaa9a3014fa38d169d3699ef0fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mass: 1000
-  influenceDistance: 10000000
+  mass: 1500
+  influenceDistance: 3100
 --- !u!4 &1611681884
 Transform:
   m_ObjectHideFlags: 0
@@ -5663,10 +5663,10 @@ MonoBehaviour:
   surfaceChunk: {fileID: 1238097237674818, guid: be91158dabe1b43bcbcb6feb7f144321,
     type: 2}
   chunkSize: 200
-  chunkLoadDistance: 500000
+  chunkLoadDistance: 710
   size: 2000
-  amplitude: 2.7
-  frequency: 0.6
+  amplitude: 3.5
+  frequency: 0.3
   seed: 0
 --- !u!114 &1611681886
 MonoBehaviour:

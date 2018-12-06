@@ -18,7 +18,7 @@ public class GravityController : MonoBehaviour {
 	void Update () {
 		if (planet == null) planet = findClosestPlanet();
 		float distance = (planet.transform.position - transform.position).sqrMagnitude;
-		if (distance <= planetInfluenceDistance) {
+		if (distance <= planetInfluenceDistance * planetInfluenceDistance) {
 			float force = (float)((gravitationalConstant * planetMass) / distance);
 			rigidbody2D.AddForce((force * (planet.transform.position - transform.position).normalized));
 		} else planet = null;
