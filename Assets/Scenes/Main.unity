@@ -113,52 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &160681129
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 160681130}
-  - component: {fileID: 160681131}
-  m_Layer: 0
-  m_Name: Surface
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &160681130
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 160681129}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1611681884}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &160681131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 160681129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90dba7c3f42b84135a65f99b6d8ef54f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  surfaceBlock: {fileID: 1847952042109104, guid: deb6ed0dba543490d8acb53ac2fdf2db,
-    type: 2}
-  size: 1000
-  amplitude: 2.7
-  frequency: 0.6
-  seed: 0
 --- !u!1 &257368749
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,6 +124,7 @@ GameObject:
   - component: {fileID: 257368752}
   - component: {fileID: 257368751}
   - component: {fileID: 257368753}
+  - component: {fileID: 257368754}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -259,10 +214,10 @@ PolygonCollider2D:
       - {x: -0.083949685, y: -0.03134173}
       - {x: -0.1843523, y: -0.09521121}
       - {x: -0.1841961, y: -0.15847892}
-      - {x: -0.0837695, y: -0.19005603}
-      - {x: -0.055244144, y: -0.3499996}
-      - {x: 0.054992415, y: -0.3499996}
-      - {x: 0.08217255, y: -0.18795413}
+      - {x: -0.08481404, y: -0.19580078}
+      - {x: -0.055244148, y: -0.3396281}
+      - {x: 0.054992415, y: -0.3396281}
+      - {x: 0.0842617, y: -0.19422609}
       - {x: 0.18329062, y: -0.16023082}
       - {x: 0.1843761, y: -0.09674376}
       - {x: 0.08513701, y: -0.029837787}
@@ -277,14 +232,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73c3f4b31974f41ddaa8b0a4224c7e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidbody2D: {fileID: 257368751}
   particleSystem: {fileID: 1127397096}
   activateEngine: 304
   rotateLeft: 97
   rotateRight: 100
   enginePower: 1000
   rotationPower: 1000
-  planet: {fileID: 1611681882}
+--- !u!114 &257368754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 257368749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb4affb7233a047c382351ed0242c3f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planet: {fileID: 0}
 --- !u!1 &382333098
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,6 +400,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &510485677
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 510485678}
+  m_Layer: 0
+  m_Name: Chunks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &510485678
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510485677}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.2663226, y: 614.6443, z: 4.5837374}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1611681884}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,9 +518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followObject: {fileID: 257368749}
-  camera: {fileID: 534669904}
   maxZoom: 250
-  planet: {fileID: 1611681882}
 --- !u!1 &721024532
 GameObject:
   m_ObjectHideFlags: 0
@@ -1390,7 +1381,7 @@ ParticleSystem:
     serializedVersion: 5
     enabled: 1
     type: 4
-    angle: 10
+    angle: 20
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -5620,13 +5611,28 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1611681884}
+  - component: {fileID: 1611681883}
+  - component: {fileID: 1611681885}
   m_Layer: 0
   m_Name: Planet
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1611681883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1611681882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6937ceaa9a3014fa38d169d3699ef0fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mass: 100
+  influenceDistance: 1000000
 --- !u!4 &1611681884
 Transform:
   m_ObjectHideFlags: 0
@@ -5638,10 +5644,28 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1348295570}
-  - {fileID: 160681130}
+  - {fileID: 510485678}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1611681885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1611681882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90dba7c3f42b84135a65f99b6d8ef54f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  surfaceChunk: {fileID: 1238097237674818, guid: be91158dabe1b43bcbcb6feb7f144321,
+    type: 2}
+  chunkSize: 100
+  size: 1000
+  amplitude: 2.7
+  frequency: 0.6
+  seed: 0
 --- !u!1 &1967325068
 GameObject:
   m_ObjectHideFlags: 0

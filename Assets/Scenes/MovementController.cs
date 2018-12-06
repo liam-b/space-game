@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MovementController : MonoBehaviour {
-	public new Rigidbody2D rigidbody2D;
-	public ParticleSystem particleSystem;
+	private new Rigidbody2D rigidbody2D;
+	public new ParticleSystem particleSystem;
 
   public KeyCode activateEngine;
 	public KeyCode rotateLeft;
@@ -13,11 +13,10 @@ public class MovementController : MonoBehaviour {
 	public float enginePower;
 	public float rotationPower;
 
-	public GameObject planet;
-
 	private ParticleSystem.EmissionModule emission;
 
   void Start() {
+		rigidbody2D = GetComponent<Rigidbody2D>();
 		emission = particleSystem.emission;
   }
 
@@ -37,17 +36,5 @@ public class MovementController : MonoBehaviour {
 		if (Input.GetKey(rotateRight)) {
 			rigidbody2D.AddTorque(-rotationPower * Time.deltaTime);
 		}
-
-		float force = (float)(10000000 * 0.4 / (planet.transform.position - transform.position).sqrMagnitude);
-		rigidbody2D.AddForce((force * (planet.transform.position - transform.position).normalized));
   }
-
-	// void OnCollisionEnter2D(Collision2D collision) {
-	// 	// Debug.Log("heett");
-	// 	// Destroy(collision.gameObject);
-
-	// 	collision.gameObject.AddComponent<Rigidbody2D>();
-	// 	collision.gameObject.GetComponent<Rigidbody2D>().mass = 0f;
-
-	// }
 }
