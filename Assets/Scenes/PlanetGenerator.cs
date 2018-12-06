@@ -6,6 +6,7 @@ public class PlanetGenerator : MonoBehaviour {
 	public GameObject surfaceChunk;
 
 	public int chunkSize;
+	public int chunkLoadDistance;
 
 	public float size;
 	public float amplitude;
@@ -32,7 +33,7 @@ public class PlanetGenerator : MonoBehaviour {
 
 				// Debug.Log(step.ToString() + " " +  Mathf.Min(step + 200, steps).ToString());
 				GameObject chunk = Instantiate(surfaceChunk, new Vector2(x, y), Quaternion.identity, transform.Find("Chunks"));
-				chunk.GetComponent<ChunkController>().Initalise(step, Mathf.Min(step + chunkSize, steps), steps, features);
+				chunk.GetComponent<ChunkController>().Initalise(step, Mathf.Min(step + chunkSize, steps), steps, chunkLoadDistance, features);
 			}
 		}
 	}

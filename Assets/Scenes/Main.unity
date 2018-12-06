@@ -139,7 +139,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 257368749}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 620, z: 0}
+  m_LocalPosition: {x: 0, y: 1100, z: 0}
   m_LocalScale: {x: 15, y: 15, z: 1}
   m_Children:
   - {fileID: 2122116764}
@@ -5613,6 +5613,7 @@ GameObject:
   - component: {fileID: 1611681884}
   - component: {fileID: 1611681883}
   - component: {fileID: 1611681885}
+  - component: {fileID: 1611681886}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Planet
@@ -5631,8 +5632,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6937ceaa9a3014fa38d169d3699ef0fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mass: 100
-  influenceDistance: 1000000
+  mass: 1000
+  influenceDistance: 10000000
 --- !u!4 &1611681884
 Transform:
   m_ObjectHideFlags: 0
@@ -5661,11 +5662,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   surfaceChunk: {fileID: 1238097237674818, guid: be91158dabe1b43bcbcb6feb7f144321,
     type: 2}
-  chunkSize: 100
-  size: 1000
+  chunkSize: 200
+  chunkLoadDistance: 500000
+  size: 2000
   amplitude: 2.7
   frequency: 0.6
   seed: 0
+--- !u!114 &1611681886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1611681882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16d0b7a9eea834b8fa6445563776f746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  objectToPool: {fileID: 1847952042109104, guid: deb6ed0dba543490d8acb53ac2fdf2db,
+    type: 2}
+  amountToPool: 7000
 --- !u!1 &1967325068
 GameObject:
   m_ObjectHideFlags: 0

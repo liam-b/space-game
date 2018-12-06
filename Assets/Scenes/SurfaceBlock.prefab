@@ -20,14 +20,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4035231735064086}
   - component: {fileID: 212362448959089866}
-  - component: {fileID: 61139256770828858}
+  - component: {fileID: 61680975956219738}
   m_Layer: 0
   m_Name: SurfaceBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4035231735064086
 Transform:
   m_ObjectHideFlags: 1
@@ -41,7 +41,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61139256770828858
+--- !u!61 &61680975956219738
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
