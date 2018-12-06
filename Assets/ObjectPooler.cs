@@ -31,7 +31,7 @@ public class ObjectPooler : MonoBehaviour {
   }
 
   GameObject newObject(Vector2 position, Quaternion rotation, Transform parent) {
-    GameObject obj = (GameObject)Instantiate(poolObject, position, rotation, parent);
+    GameObject obj = Instantiate(poolObject, position, rotation, parent);
     pooledObjects.Add(obj);
     obj.SetActive(true);
     return obj;

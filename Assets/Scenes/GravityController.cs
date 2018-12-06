@@ -6,12 +6,10 @@ public class GravityController : MonoBehaviour {
 	public GameObject planet;
 	private float planetMass;
 	private float planetInfluenceDistance;
-	private new Rigidbody2D rigidbody2D;
 
 	private float gravitationalConstant = 10000;
 
 	void Start () {
-		rigidbody2D = GetComponent<Rigidbody2D>();
 		planet = findClosestPlanet();
 	}
 	
@@ -20,7 +18,11 @@ public class GravityController : MonoBehaviour {
 		float distance = (planet.transform.position - transform.position).sqrMagnitude;
 		if (distance <= planetInfluenceDistance * planetInfluenceDistance) {
 			float force = (float)((gravitationalConstant * planetMass) / distance);
-			rigidbody2D.AddForce((force * (planet.transform.position - transform.position).normalized));
+			// rigidbody2D.AddForce((force * (planet.transform.position - transform.position).normalized));
+			foreach (Transform child in transform) {
+				Rigidbody2D rigidbody = child.GetComponent<Rigidbody2D>();
+				rigidbody.AddForce((force * (planet.transform.position - transform.position).normalized));
+			}
 		} else planet = null;
 	}
 
