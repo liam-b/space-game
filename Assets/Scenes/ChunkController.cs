@@ -36,12 +36,13 @@ public class ChunkController : MonoBehaviour {
 	void loadSurface() {
 		loaded = true;
 
-		float scale = (features.size / 100f);
+		// float scale = (features.size / 100f);
+		float scale = 20;
 		for (int step = startStep; step < endStep; step++) {
 			float angle = ((float)step / (float)totalSteps) * 2 * Mathf.PI;
 			float distance = features.size / 2 + Mathf.PerlinNoise(angle * features.frequency * scale, features.seed) * features.amplitude * scale;
 
-			placeSurfaceBlock(Mathf.Round(distance), distance - (features.size / 2) + 1, angle);
+			placeSurfaceBlock(Mathf.Round(distance), distance - (features.size / 2) + 2, angle);
 		}
 	}
 

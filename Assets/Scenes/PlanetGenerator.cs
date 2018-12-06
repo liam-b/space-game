@@ -16,7 +16,7 @@ public class PlanetGenerator : MonoBehaviour {
 	void Start() {
 		PlanetFeatures features = new PlanetFeatures(size, amplitude, frequency, seed);
 
-		int steps = (int)(size * 3.5);
+		int steps = (int)(size * 3.4);
 		float scale = (size / 100f);
 
 		Transform planetTransform = transform.Find("Body");
@@ -25,7 +25,7 @@ public class PlanetGenerator : MonoBehaviour {
 		for (int step = 0; step < steps; step++) {
 			if (step % chunkSize == 0 && step != steps) {
 				float angle = ((float)(step + chunkSize) / (float)steps) * 2 * Mathf.PI;
-				float distance = size / 2 + amplitude * scale;
+				float distance = size / 2 + (amplitude * scale) / 2;
 				distance = Mathf.Round(distance);
 
 				float x = Mathf.Cos(angle) * distance;
