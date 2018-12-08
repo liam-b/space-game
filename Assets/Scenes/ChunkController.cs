@@ -48,14 +48,14 @@ public class ChunkController : MonoBehaviour {
 
 	void unloadSurface() {
 		loaded = false;
-		foreach (Transform child in transform) ObjectPooler.SharedInstance.ReleaseObject(child.gameObject);
+		foreach (Transform child in transform) ObjectPooler.instance.ReleaseObject(child.gameObject);
 	}
 
 	void placeSurfaceBlock(float distance, float height, float angle) {
 		float x = Mathf.Cos(angle) * (distance - height / 2);
 		float y = Mathf.Sin(angle) * (distance - height / 2);
 
-		GameObject block = ObjectPooler.SharedInstance.DrawObject(new Vector2(x, y), Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg), transform);
+		GameObject block = ObjectPooler.instance.DrawObject(new Vector2(x, y), Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg), transform);
 		block.transform.localScale = new Vector2(height, 1);
 	}
 
