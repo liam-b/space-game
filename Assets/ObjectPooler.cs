@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectPooler : MonoBehaviour {
-  public static ObjectPooler SharedInstance;
+  public static ObjectPooler instance;
   public List<GameObject> pooledObjects = new List<GameObject>();
   public GameObject poolObject;
 
   void Awake() {
-    SharedInstance = this;
+    instance = this;
   }
 
   public GameObject DrawObject(Vector2 position, Quaternion rotation, Transform parent) {
