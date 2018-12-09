@@ -13,6 +13,13 @@ public class RocketPart : MonoBehaviour {
 
   void updateConnectedness(Joint2D brokenJoint) {
     if (!commandPart) connectedToCommandPart = connectedToCommand(gameObject, transform.parent.GetComponent<GravityController>().commandPart, brokenJoint, new List<GameObject>());
+    if (!connectedToCommandPart) {
+      foreach (Transform child in transform.parent) {
+        if (child.GetComponent<RocketPart>().connectedToCommandPart && connectedToObject(gameObject, child.gameObject, null)) {
+          child.GetComponent<RocketPart>().updateConnectedness(brokenJoint);
+        }
+      }
+    }
   }
 
   bool connectedToCommand(GameObject obj, GameObject commandPart, Joint2D brokenJoint, List<GameObject> checkedObjects) {
