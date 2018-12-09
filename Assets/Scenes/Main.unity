@@ -277,7 +277,7 @@ Rigidbody2D:
   m_UseAutoMass: 1
   m_Mass: 2.2363753
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.2
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -416,7 +416,7 @@ Rigidbody2D:
   m_UseAutoMass: 1
   m_Mass: 7.58817
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.2
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -551,6 +551,7 @@ GameObject:
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
   - component: {fileID: 534669906}
+  - component: {fileID: 534669907}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Untagged
@@ -629,7 +630,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d362ceb630746f8955401bdb43bdfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxZoom: 750
+  maxZoom: 1000
+--- !u!114 &534669907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 301eca71255100647bb9bad1d5641921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &721024532
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,7 +733,7 @@ Rigidbody2D:
   m_UseAutoMass: 1
   m_Mass: 2.025
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.2
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -857,7 +869,7 @@ Rigidbody2D:
   m_UseAutoMass: 1
   m_Mass: 2.21802
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.2
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -5633,7 +5645,7 @@ Rigidbody2D:
   m_UseAutoMass: 1
   m_Mass: 1.0828896
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.2
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -5913,7 +5925,7 @@ Rigidbody2D:
   m_UseAutoMass: 1
   m_Mass: 3.8357944
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.2
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -5965,7 +5977,7 @@ TrailRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1570081264}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -6141,7 +6153,7 @@ Rigidbody2D:
   m_UseAutoMass: 1
   m_Mass: 2.025
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.2
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -6245,8 +6257,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   surfaceChunk: {fileID: 1238097237674818, guid: be91158dabe1b43bcbcb6feb7f144321,
     type: 2}
-  chunkSize: 200
-  chunkLoadDistance: 2000
+  chunkSize: 180
+  chunkLoadDistance: 2500
   size: 10000
   amplitude: 15
   frequency: 0.35
@@ -6356,7 +6368,7 @@ Rigidbody2D:
   m_UseAutoMass: 1
   m_Mass: 3.263759
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.2
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -6496,7 +6508,7 @@ Rigidbody2D:
   m_UseAutoMass: 1
   m_Mass: 8.032499
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.2
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0

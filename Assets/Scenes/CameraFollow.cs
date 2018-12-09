@@ -19,7 +19,7 @@ public class CameraFollow : MonoBehaviour {
 		}
 	}
 	
-	void Update () {
+	void LateUpdate () {
 		float newZoom = camera.orthographicSize + Input.GetAxis("Mouse ScrollWheel") * camera.orthographicSize * 0.1f;
 		if (newZoom <= maxZoom) camera.orthographicSize = newZoom;
 		else camera.orthographicSize = maxZoom;
