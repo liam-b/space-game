@@ -13,7 +13,7 @@ public class ChunkController : MonoBehaviour {
 	private int totalSteps;
 
 	private PlanetFeatures features;
-	private GameObject player;
+	private PartController player;
 
 	public void Initalise(int startStep, int endStep, int totalSteps, float loadDistance, PlanetFeatures features) {
 		this.startStep = startStep;
@@ -24,11 +24,11 @@ public class ChunkController : MonoBehaviour {
 	}
 
 	void Start() {
-		player = GameObject.Find("Player");
+		player = GameObject.FindGameObjectWithTag("Player").GetComponent<ShipController>().commandingPart;
 	}
 	
 	void Update() {
-		float distance = (player.transform.GetChild(0).position - transform.position).sqrMagnitude;
+		float distance = (player.transform.position - transform.position).sqrMagnitude;
 		if (distance <= loadDistance * loadDistance && !loaded) loadSurface();
 		if (distance >= loadDistance * loadDistance + 100 && loaded) unloadSurface();
   }

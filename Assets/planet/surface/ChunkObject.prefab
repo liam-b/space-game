@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4365719082104288}
   - component: {fileID: 114075948581673932}
   m_Layer: 0
-  m_Name: Chunk
+  m_Name: ChunkObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,4 +53,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   surfaceBlock: {fileID: 1847952042109104, guid: deb6ed0dba543490d8acb53ac2fdf2db,
     type: 2}
-  loadDistance: 100000

@@ -2,39 +2,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementController : MonoBehaviour {
-	public new Rigidbody2D rigidbody2D;
-	public new ParticleSystem particleSystem;
+public class PlayerMovementController : MonoBehaviour {
+	public ShipController ship;
+	[HideInInspector] public List<ThrustingPartController> thrusters;
+	[HideInInspector] public List<GyroscopicPartController> gyroscopes;
 
   public KeyCode activateEngine;
 	public KeyCode rotateLeft;
 	public KeyCode rotateRight;
 
-	public float enginePower;
-	public float rotationPower;
+	void Start() {
+		thrusters = ship.GetParts<ThrustingPartController>();
+		gyroscopes = ship.GetParts<GyroscopicPartController>();
+	}
 
-	private ParticleSystem.EmissionModule emission;
-
-  void Start() {
-		// rigidbody2D = GetComponent<Rigidbody2D>();
-		emission = particleSystem.emission;
-  }
-
-  void FixedUpdate() {
-		if (Input.GetKey(activateEngine)) {
-			rigidbody2D.AddRelativeForce(Vector2.up * enginePower * 100 * Time.deltaTime);
-			emission.enabled = true;
-		}
-		else {
-			emission.enabled = false;
+  void Update() {
+		if (Input.GetKeyDown(activateEngine)) {
+			foreach (ThrustingPartController thruster in thrusters) {
+				thruster.active = true;
+			}
+		} 
+		
+		if (Input.GetKeyUp(activateEngine)) {
+			foreach (ThrustingPartController thruster in thrusters) {
+				thruster.active = false;
+			}
 		}
 
 		if (Input.GetKey(rotateLeft)) {
-			rigidbody2D.AddTorque(rotationPower * 100 * Time.deltaTime);
-		}
-
-		if (Input.GetKey(rotateRight)) {
-			rigidbody2D.AddTorque(-rotationPower * 100 * Time.deltaTime);
+			foreach (GyroscopicPartController gyroscope in gyroscopes) {
+				gyroscope.direction = 1;
+			}
+		} else if (Input.GetKey(rotateRight)) {
+			foreach (GyroscopicPartController gyroscope in gyroscopes) {
+				gyroscope.direction = -1;
+			}
+		} else {
+			foreach (GyroscopicPartController gyroscope in gyroscopes) {
+				gyroscope.direction = 0;
+			}
 		}
   }
 }

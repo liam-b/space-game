@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212362448959089866}
   - component: {fileID: 61680975956219738}
   m_Layer: 0
-  m_Name: SurfaceBlock
+  m_Name: SurfaceBlockObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
